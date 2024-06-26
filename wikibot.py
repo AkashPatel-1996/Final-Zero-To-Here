@@ -10,7 +10,7 @@ def scrape(name="Microsoft"):
     click.echo(click.style(result))
 
 
-def scrape_withoutCli(name):
+def git(name):
     result = wikipedia.summary(name, sentences=1)
     return result
 
