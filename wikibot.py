@@ -1,6 +1,18 @@
 
 import wikipedia
+import click
 
-def scrape(name="Microsoft", length=1):
-    result = wikipedia.summary(name, sentences=length)
+
+@click.command()
+@click.option('--name')
+def scrape(name="Microsoft"):
+    result = wikipedia.summary(name, sentences=1)
+    click.echo(click.style(result))
+
+
+def scrape_withoutCli(name):
+    result = wikipedia.summary(name, sentences=1)
     return result
+
+if __name__ == "__main__":
+    scrape()
